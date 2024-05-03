@@ -2,12 +2,15 @@ import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
-import { allUsersRoute } from "../utils/APIRoutes"
+import { allUsersRoute, host } from "../utils/APIRoutes"
 import Contacts from "../components/Contacts"
 import Welcome from "../components/Welcome"
 import ChatContainer from "../components/ChatContainer"
+import { io } from "socket.io-client"
 
 function Chat() {
+  const socket = useRef()
+
   const navigate = useNavigate()
   const [contacts, setContacts] = useState([])
   //call once when the component is created
@@ -42,7 +45,7 @@ function Chat() {
   // Define your async functions outside of the useEffect hook
   const checkLocalStorage = async () => {
     if (!localStorage.getItem("chat-app-user")) {
-      navigate("/")
+      navigate("/login")
     } else {
       setCurrentUser(await JSON.parse(localStorage.getItem("chat-app-user")))
       setIsLoaded(true)
@@ -81,6 +84,18 @@ function Chat() {
     setCurrentChat(chat)
   }
 
+  //as soon as we have current user, we will use useEffect
+  //as soon as curr user is changed,this will run
+
+  useEffect(() => {
+    if (currentUser) {
+      socket.current = io(host)
+      //whenever curr user is logged in, we will pass this curr user id and add it to global map that we've set up in the backend
+
+      socket.current.emit("add-user", currentUser._id)
+    }
+  }, [currentUser])
+
   return (
     <Container>
       <div className="container">
@@ -92,7 +107,11 @@ function Chat() {
         {isLoaded && currentChat === undefined ? (
           <Welcome currentUser={currentUser} />
         ) : (
-          <ChatContainer currentChat={currentChat} />
+          <ChatContainer
+            currentChat={currentChat}
+            currentUser={currentUser}
+            socket={socket}
+          />
         )}
       </div>
     </Container>
@@ -121,3 +140,5 @@ const Container = styled.div`
 `
 
 export default Chat
+
+//establish socket conn for all users who have logged in
