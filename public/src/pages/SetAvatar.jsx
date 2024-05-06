@@ -165,7 +165,7 @@ const Container = styled.div`
     }
   }
   .submit-btn {
-    background-color: #4e0eff;
+    background-color: #e69900;
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -175,7 +175,7 @@ const Container = styled.div`
     font-size: 1rem;
     text-transform: uppercase;
     &:hover {
-      background-color: #4e0eff;
+      background-color: #fdde55;
     }
   }
 `

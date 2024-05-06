@@ -70,7 +70,7 @@ export default function Login() {
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
             <img src={Logo} alt="logo" />
-            <h1>snappy</h1>
+            <h1>Troopy</h1>
           </div>
           <input
             type="text"
@@ -127,12 +127,12 @@ const FormContainer = styled.div`
     gap: 2rem;
     background-color: #00000076;
     border-radius: 2rem;
-    padding: 3rem 5rem;
+    padding: 5rem;
   }
   input {
     background-color: transparent;
     padding: 1rem;
-    border: 0.1rem solid #4e0eff;
+    border: 0.1rem solid #e69900;
     border-radius: 0.4rem;
     color: white;
     width: 100%;
@@ -143,7 +143,8 @@ const FormContainer = styled.div`
     }
   }
   button {
-    background-color: #4e0eff;
+    background-color: #e69900;
+    /*     background-color: #4e0eff; */
     color: white;
     padding: 1rem 2rem;
     border: none;
@@ -160,7 +161,7 @@ const FormContainer = styled.div`
     color: white;
     text-transform: uppercase;
     a {
-      color: #4e0eff;
+      color: #5ab2ff;
       text-decoration: none;
       font-weight: bold;
     }

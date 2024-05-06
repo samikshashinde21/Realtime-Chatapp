@@ -128,7 +128,7 @@ const Container = styled.div`
       }
       .username {
         h3 {
-          color: white;
+          color: #5ab2ff;
         }
       }
     }
@@ -162,7 +162,7 @@ const Container = styled.div`
         }
       }
     }
-    .sent {
+    .sended {
       justify-content: flex-end;
       .content {
         background-color: #4f04ff21;

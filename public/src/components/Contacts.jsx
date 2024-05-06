@@ -29,7 +29,7 @@ export default function Contacts({ contacts, currentUser, changeChat }) {
           <Container>
             <div className="brand">
               <img src={Logo} alt="logo" />
-              <h3>Snappy</h3>
+              <h3>Troopy</h3>
             </div>
             <div className="contacts">
               {contacts.map((contact, index) => {
@@ -71,7 +71,6 @@ export default function Contacts({ contacts, currentUser, changeChat }) {
     </>
   )
 }
-
 const Container = styled.div`
   display: grid;
   grid-template-rows: 10% 75% 15%;
@@ -99,13 +98,13 @@ const Container = styled.div`
     &::-webkit-scrollbar {
       width: 0.2rem;
       &-thumb {
-        background-color: #ffffff39;
+        background-color: #5ab2ff;
         width: 0.1rem;
         border-radius: 1rem;
       }
     }
     .contact {
-      background-color: #ffffff34;
+      background-color: #5ab2ff;
       min-height: 5rem;
       cursor: pointer;
       width: 90%;
@@ -127,12 +126,14 @@ const Container = styled.div`
       }
     }
     .selected {
-      background-color: #9a86f3;
+      background-color: #03aed2;
     }
   }
 
   .current-user {
-    background-color: #0d0d30;
+    /*  background-color: #0d0d30; */
+    background-color: #03aed2;
+
     display: flex;
     justify-content: center;
     align-items: center;
