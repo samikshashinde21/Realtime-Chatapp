@@ -98,13 +98,13 @@ const Container = styled.div`
     &::-webkit-scrollbar {
       width: 0.2rem;
       &-thumb {
-        background-color: #5ab2ff;
+        background-color: #002233;
         width: 0.1rem;
         border-radius: 1rem;
       }
     }
     .contact {
-      background-color: #5ab2ff;
+      background-color: #002233;
       min-height: 5rem;
       cursor: pointer;
       width: 90%;

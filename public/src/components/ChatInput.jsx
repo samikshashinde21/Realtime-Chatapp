@@ -105,7 +105,7 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     gap: 2rem;
-    background-color: #5ab2ff;
+    background-color: #002233;
     input {
       width: 90%;
       height: 60%;
@@ -138,7 +138,7 @@ const Container = styled.div`
       }
       svg {
         font-size: 2rem;
-        color: #5ab2ff;
+        color: #002233;
       }
     }
   }
